@@ -1,21 +1,24 @@
 package com.company.reverse;
 
+
 public class Reverse {
-    public static void main(String[] args) {
+
+    static final String ALL_DIGITS_IN_STRING = "[\\d+]";
+    static final String STRING_REGEX = "";
+
+    public String reverse(String stringToReverse) {
 
 
-        System.out.println(reverse("ad12fgiu57"));
-    }
+        StringBuilder reverseString = new StringBuilder(stringToReverse.replaceAll(ALL_DIGITS_IN_STRING, STRING_REGEX)).reverse();
 
-    private static String reverse(String string) {
-        StringBuilder reverseString = new StringBuilder(string.replaceAll("[\\d+]", "")).reverse();
-
-        for (int numOfSymbols   = 0; numOfSymbols < string.length(); numOfSymbols++) {
-            if (!Character.isLetter(string.charAt(numOfSymbols))) {
-                reverseString.insert(numOfSymbols, string.charAt(numOfSymbols));
+        for (int indexOfSymbols = 0; indexOfSymbols < stringToReverse.length(); indexOfSymbols++) {
+            if (!Character.isLetter(stringToReverse.charAt(indexOfSymbols))) {
+                reverseString.insert(indexOfSymbols, stringToReverse.charAt(indexOfSymbols));
             }
         }
         return reverseString.toString();
 
     }
+
+
 }
