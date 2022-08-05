@@ -1,12 +1,9 @@
 package com.company.reverse;
 
-public class ReverseTest {
+public class Application {
     public static void main(String[] args) {
-        
         Reverse reverse = new Reverse();
-
-        System.out.println(reverse.reverse("asdfk124gjh56"));
-
+        System.out.println(reverse.ActionOfReversing("asdfk124gjh56"));
     }
 }
 
