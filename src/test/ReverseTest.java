@@ -1,27 +1,23 @@
-package com.company.reverse;
-
-import org.junit.jupiter.api.BeforeAll;
+import com.company.reverse.Reverse;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class ReverseTest {
-    Reverse reverse = new Reverse();
+   private Reverse reverse = new Reverse();
 
     @Test
-    void stringShouldReturnReversedStringWithDigitsUnchanged() {
+    void shouldReverseWordWithDigitsUnchanged() {
         assertEquals("dcba1", reverse.getReversed("abcd1"));
     }
 
     @Test
-    void stringShouldReturnReversedStringWithDigitsSpacesSymbolsUnchanged() {
+    void shouldReplaceDigitsSpacesSymbols() {
         assertEquals("!b1 !A2", reverse.getReversed("!A1 !b2"));
     }
 
     @Test
-    void getException() {
-
-        assertThrows(IllegalArgumentException.class, () -> {reverse.getReversed(null);});
+    void shouldThrowIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class,()-> reverse.getReversed(null));
     }
 
     @Test

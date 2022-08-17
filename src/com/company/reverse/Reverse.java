@@ -5,13 +5,11 @@ public class Reverse {
     private static final String MATCH_ALL_EXCEPT_UNICODE_LETTERS = "[^\\p{L}]+";
     private static final String EMPTY = "";
 
-    public String getReversed(String stringToReverse) { //как тестировать эксепшены
+    public String getReversed(String stringToReverse) {
         if (stringToReverse == null) {
-
             throw new IllegalArgumentException();
-                
         }
-        StringBuilder reverseString = new StringBuilder(stringToReverse.replaceAll(MATCH_ALL_EXCEPT_UNICODE_LETTERS, EMPTY)).reverse();//обнаруживать пробелы,изменить рег вражение
+        StringBuilder reverseString = new StringBuilder(stringToReverse.replaceAll(MATCH_ALL_EXCEPT_UNICODE_LETTERS, EMPTY)).reverse();
         for (int indexOfSymbols = 0; indexOfSymbols < stringToReverse.length(); indexOfSymbols++) {
             if (!Character.isLetter(stringToReverse.charAt(indexOfSymbols))) {
                 reverseString.insert(indexOfSymbols, stringToReverse.charAt(indexOfSymbols));
