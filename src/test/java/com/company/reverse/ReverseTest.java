@@ -1,9 +1,11 @@
-import com.company.reverse.Reverse;
+package com.company.reverse;
+
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ReverseTest {
-   private Reverse reverse = new Reverse();
+    private final Reverse reverse = new Reverse();
 
     @Test
     void shouldReverseWordWithDigitsUnchanged() {
@@ -16,12 +18,13 @@ class ReverseTest {
     }
 
     @Test
-    void shouldThrowIllegalArgumentException() {
-        assertThrows(IllegalArgumentException.class,()-> reverse.getReversed(null));
+    void shouldThrowIllegalArgumentExceptionOnNull() {
+        assertThrows(IllegalArgumentException.class, () -> reverse.getReversed(null));
     }
 
     @Test
     void shouldNotReplaceDigitsAndSymbols() {
         assertEquals("!1asd2!", reverse.getReversed("!1dsa2!"));
     }
+
 }
