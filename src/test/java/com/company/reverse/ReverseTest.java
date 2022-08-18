@@ -28,6 +28,6 @@ class ReverseTest {
     }
 
     @Test
-    void shouldReturnEmptySpace() { assertEquals("", reverse.getReversed(""));
+    void shouldReturnEmptySpace() {assertEquals("", reverse.getReversed(""));
     }
 }
