@@ -18,7 +18,7 @@ class ReverseTest {
     }
 
     @Test
-    void shouldThrowIllegalArgumentExceptionOnNull() {
+    void shouldThrowIllegalArgumentExceptionIfNull() {
         assertThrows(IllegalArgumentException.class, () -> reverse.getReversed(null));
     }
 
@@ -27,4 +27,7 @@ class ReverseTest {
         assertEquals("!1asd2!", reverse.getReversed("!1dsa2!"));
     }
 
+    @Test
+    void shouldReturnEmptySpace() { assertEquals("", reverse.getReversed(""));
+    }
 }
